@@ -1,0 +1,5 @@
+<!-- access component binding with $ctrl -->
+<p>{{ $ctrl.person.name }}<br>
+	<a ui-sref="show-details({person_id: $ctrl.person.id})">More deets, pls</a>
+</p>
+<button ng-click="$ctrl.whenIClick({ target: $ctrl.person })">Greet (in console)</button>

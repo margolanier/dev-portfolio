@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>Margo Lanier | Portfolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="PortfolioApp">
+	<header>
+		<h1>Portfolio</h1>
+	</header>
+	
+	<section ng-controller="DisplayProjectsController">
+		<p>here is the list</p>
+		<ul>
+			<li ng-repeat="project in projects">{{ project.title }}</li>
+		</ul>
+	</section>
+</body>
+
+</html>
