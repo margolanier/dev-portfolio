@@ -13,10 +13,14 @@
 		<h1>Portfolio</h1>
 	</header>
 	
-	<section ng-controller="DisplayProjectsController">
-		<p>here is the list</p>
+	<section ng-controller="ListProjectsController">
 		<ul>
-			<li ng-repeat="project in projects">{{ project.title }}</li>
+			<li ng-repeat="project in projects">
+				{{ project.title }}<br>
+				{{ project.desc }}<br>
+				View project: {{ project.siteLink }}<br>
+				View code: {{ project.githubLink }}
+			</li>
 		</ul>
 	</section>
 </body>
