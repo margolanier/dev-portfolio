@@ -112,7 +112,7 @@
 .item {
     background: #fff;
     border-top: .5rem solid currentColor;
-    border-radius: 2px;
+    //border-radius: 2px;
     margin-bottom: 1rem;
     position: relative;
 }
@@ -149,27 +149,27 @@
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
 /* 2 Columns */
-.item, .gap {
+/*.item, .gap {
     width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
-}
+}*/
 
 /* 3 Columns */
-@media screen and (min-width: 541px) {
+/*@media screen and (min-width: 541px) {
     .item, .gap {
         width: calc(100%/3 - (((3 - 1) * 1rem) / 3));
     }
-}
+}*/
 
 /* 4 Columns */
-@media screen and (min-width: 961px) {
+/*@media screen and (min-width: 961px) {
     .item, .gap {
         width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
     }
-}
+}*/
 
 /* 5 Columns */
-@media screen and (min-width: 1281px) {
+/*@media screen and (min-width: 1281px) {
     .item, .gap {
         width: calc(100%/5 - (((5 - 1) * 1rem) / 5));
     }
-}
+}*/

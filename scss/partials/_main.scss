@@ -1,6 +1,12 @@
 html, body {
     height: 100%;
     background: $bg-color;
+	color: $font-color;
+	font-family: $body-font;
+}
+
+h1, h2, h3 {
+	@include header-font;
 }
 
 *, *:before, *:after {
@@ -8,17 +14,53 @@ html, body {
 }
 
 header {
-	@include grid-row();
-	
-	h1 {
-		@include grid-column(12);
-	}
+	padding: 1em;
 }
 
-#portfolio {
+#portfolio .item {
+	@include grid-column(3);
+	border-top: none;
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+
+	.item-image {
+		opacity: 1;
+	}
+
+	.item-info {
+		
+		h2 {
+			text-align: center;
+		}
+		p {
+			font-size: 1em;
+			line-height: 1.3em;
+		}
+		
+		opacity: 0;
+		background-color: $primary-color;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0;
+		padding: 1em;
+		transition: 0.1s ease-in;
+	}
 	
-	.item {
-		@include grid-column(3);
-		border-top: none;
+	&:hover {
+		.item-image {
+			opacity: 0.8;
+		}
+		
+		.item-info {
+			opacity: 1;
+		}
 	}
 }

@@ -16,10 +16,13 @@ module.exports = {
 		
 		function render(item) {
 			return `<div class="item" data-ref="item">
-				<img src="${item.image}" alt="${item.name}">
-				Name: ${item.name},
-				Desc: ${item.desc},
-				Categ: ${item.category}
+				<div class="item-image">
+					<img src="${item.image}" alt="${item.name}">
+				</div>
+				<div class="item-info">
+					<h2>${item.name}</h2>
+					<p>${item.desc}</p>
+				</div>
 			</div>`;
 		};
 		
