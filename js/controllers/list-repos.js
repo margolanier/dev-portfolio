@@ -12,7 +12,11 @@ module.exports = {
 		const container = document.querySelector('[data-ref="container"]');
 		
 		function render(item) {
-			return `<div class="item" data-ref="item">Name: ${item.name}, Desc: ${item.desc}</div>`;
+			return `<div class="item" data-ref="item">
+				Name: ${item.name},
+				Desc: ${item.desc},
+				Categ: ${item.category}
+			</div>`;
 		};
 		
 		const mixer = mixitup(container, {
