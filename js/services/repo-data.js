@@ -4,7 +4,8 @@ module.exports = {
 		const projects = [];
 
 		function Project(repo /*, image,*/) {
-			this.title = repo.name;
+			this.id = repo.id;
+			this.name = repo.name;
 			// this.image = image;
 			this.desc = repo.description;
 			this.siteLink = repo.homepage;
@@ -23,11 +24,10 @@ module.exports = {
 						let currentRepo = new Project(repo);
 						projects.push(currentRepo);
 					});
-					console.log(projects);
 				});
 			},
 
-			getProjects() {
+			getAllProjects() {
 				return projects;
 			},
 		};
