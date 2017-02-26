@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    background: $bg-color;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+header {
+	@include grid-row();
+	
+	h1 {
+		@include grid-column(12);
+	}
+}
+
+#portfolio {
+	
+	.item {
+		@include grid-column(3);
+	}
+}

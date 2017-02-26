@@ -3,3 +3,8 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
+$bg-color: #f2f2f2;
+
+@import 'partials/main';
+@import 'partials/mixitup';
+
