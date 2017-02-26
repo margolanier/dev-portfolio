@@ -3,7 +3,7 @@ module.exports = {
 	task($http) {
 		const projects = [];
 		
-		// Designate which github repos to display. Set custom images, categories...
+		// Designate which github repos to display, and set custom options
 		const highlights = require ('./repo-options');
 
 		/* 

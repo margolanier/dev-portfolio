@@ -11,18 +11,19 @@
 <body ng-app="PortfolioApp">
 	<header>
 		<h1>Portfolio</h1>
+		<nav data-ref="controls">
+            <button class="control control-filter" data-ref="filter" data-category="all">All</button>
+			<button class="control control-filter" data-ref="filter" data-category="angular">Angular</button>
+			<button class="control control-filter" data-ref="filter" data-category="game">Game</button>
+            <button class="control control-filter" data-ref="filter" data-category="tool">Tool</button>
+
+            <button class="control control-sort" data-ref="sort" data-key="dateUpdated" data-order="asc">Asc</button>
+            <button class="control control-sort" data-ref="sort" data-key="dateUpdated" data-order="desc">Desc</button>
+        </nav>
 	</header>
 	
-	<section ng-controller="ListProjectsController">
-		<div class="container" data-ref="container"></div>
-		<ul>
-			<!--<li ng-repeat="project in projects">
-				{{ project.title }}<br>
-				{{ project.desc }}<br>
-				View project: {{ project.siteLink }}<br>
-				View code: {{ project.githubLink }}
-			</li>-->
-		</ul>
+	<section ng-controller="ListProjects">
+		<div id="portfolio" data-ref="container"></div>
 	</section>
 </body>
 

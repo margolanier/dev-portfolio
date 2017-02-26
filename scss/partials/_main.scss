@@ -19,5 +19,6 @@ header {
 	
 	.item {
 		@include grid-column(3);
+		border-top: none;
 	}
 }
