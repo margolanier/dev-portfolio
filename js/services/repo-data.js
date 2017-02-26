@@ -2,6 +2,7 @@ module.exports = {
 	name: 'ProjectData',
 	task($http) {
 		const projects = [];
+		let filtered = [];
 		
 		// Designate which github repos to display, and set custom options
 		const highlights = require ('./repo-options');
@@ -49,6 +50,18 @@ module.exports = {
 
 			getAllProjects() {
 				return projects;
+			},
+			
+			getFilteredProjects(category) {
+				if (category === 'all') {
+					filtered = projects;
+				} else {
+					filtered = projects.filter(function(project) {
+						return project.category.includes(category);
+					});
+				}
+				console.log(filtered);
+				return filtered;
 			},
 		};
 	},

@@ -7,6 +7,9 @@ $bg-color: #f2f2f2;
 $primary-color: #61A3AA;
 $font-color: #1e1e1e;
 $body-font: 'Raleway', sans-serif;
+$small: 450px;
+$medium: 750px;
+$large: 1050px;
 
 @mixin header-font {
     font-family: 'Domine', serif;

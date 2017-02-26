@@ -18,7 +18,7 @@
     transition: background 150ms;
 }*/
 
-.control:not(.control-active):hover {
+/*.control:not(.control-active):hover {
     background: #3f3f3f;
 }
 
@@ -33,9 +33,9 @@
     border-radius: 2px;
     background: currentColor;
     transition: background-color 150ms, border-color 150ms;
-}
+}*/
 
-.control-sort:after {
+/*.control-sort:after {
     content: '';
     position: absolute;
     width: 10px;
@@ -49,9 +49,9 @@
 
 .control-sort[data-order="desc"]:after {
     transform:  translateY(-4px) rotate(-135deg);
-}
+}*/
 
-.control-active {
+/*.control-active {
     background: #393939;
 }
 
@@ -85,7 +85,7 @@
 
 .control-filter[data-color="none"] {
     color: #2f2f2f;
-}
+}*/
 
 /* Container
 ---------------------------------------------------------------------- */

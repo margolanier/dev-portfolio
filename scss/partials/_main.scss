@@ -9,6 +9,10 @@ h1, h2, h3 {
 	@include header-font;
 }
 
+p {
+	font-family: $body-font;
+}
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -17,50 +21,91 @@ header {
 	padding: 1em;
 }
 
-#portfolio .item {
-	@include grid-column(3);
-	border-top: none;
-	position: relative;
-	overflow: hidden;
-	height: 200px;
-	margin: 0;
-	padding: 0;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-
-	.item-image {
-		opacity: 1;
+button {
+	color: $primary-color;
+	font-family: $body-font;
+    font-weight: bold;
+	border-bottom: 3px solid transparent;
+	padding: 0.5em;
+	
+	&.control-active {
+		border-bottom: 3px solid $primary-color;
 	}
 
-	.item-info {
-		
-		h2 {
-			text-align: center;
-		}
-		p {
-			font-size: 1em;
-			line-height: 1.3em;
-		}
-		
-		opacity: 0;
-		background-color: $primary-color;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+}
+
+#portfolio {
+	.item {
+		@include grid-column(12);
+
+		border-top: none;
+		position: relative;
+		overflow: hidden;
+		height: 200px;
 		margin: 0;
-		padding: 1em;
-		transition: 0.1s ease-in;
+		padding: 0;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+
+		.item-info {
+			p {
+				font-size: 1em;
+				line-height: 1.3em;
+			}
+		}
+		
 	}
 	
-	&:hover {
-		.item-image {
-			opacity: 0.8;
+	&.grid {
+		.item {
+			@include breakpoint($small) {
+				@include grid-column(6);
+			}
+			@include breakpoint($medium) {
+				@include grid-column(4);
+			}
+			@include breakpoint($large) {
+				@include grid-column(3);
+			}
+			
+			.item-image {
+				opacity: 1;
+			}
+
+			.item-info {
+
+				h2 {
+					text-align: center;
+				}
+
+				opacity: 0;
+				background-color: $primary-color;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0;
+				padding: 1em;
+				transition: 0.1s ease-in;
+			}
+			
+			&:hover {
+				.item-image {
+					opacity: 0.8;
+				}
+
+				.item-info {
+					opacity: 1;
+				}
+			}
 		}
-		
-		.item-info {
-			opacity: 1;
-		}
+	}
+	
+	&.list {
+		margin: 0 1em;
 	}
 }

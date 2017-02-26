@@ -14,13 +14,14 @@
 		<h1>Portfolio</h1>
 		<nav data-ref="controls">
             <button class="control control-filter" data-ref="filter" data-category="all">All</button>
-			<button class="control control-filter" data-ref="filter" data-category="angular">Angular</button>
-			<button class="control control-filter" data-ref="filter" data-category="game">Game</button>
-            <button class="control control-filter" data-ref="filter" data-category="tool">Tool</button>
+			<button class="control control-filter" data-ref="filter" data-category="angular">AngularJS</button>
+			<button class="control control-filter" data-ref="filter" data-category="game">Games</button>
+            <button class="control control-filter" data-ref="filter" data-category="tool">Tools</button>
 
-            <button class="control control-sort" data-ref="sort" data-key="dateUpdated" data-order="asc">Asc</button>
-            <button class="control control-sort" data-ref="sort" data-key="dateUpdated" data-order="desc">Desc</button>
-        </nav>
+            <button class="control control-layout" data-ref="layout" data-layout="grid">Grid</button>
+            <button class="control control-layout" data-ref="layout" data-layout="list">List</button>
+			
+		</nav>
 	</header>
 	
 	<section ng-controller="ListProjects">
