@@ -63,7 +63,6 @@ module.exports = {
 						return project.category.includes(category);
 					});
 				}
-				console.log(filtered);
 				return filtered;
 			},
 		};

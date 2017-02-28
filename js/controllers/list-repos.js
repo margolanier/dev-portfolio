@@ -83,13 +83,11 @@ module.exports = {
 		const getFiltered = category => {
 			return ProjectData.getFilteredProjects(category);
 		};
+		
 		const renderFiltered = category => {
-			ProjectData.getFilteredProjects(category)
-				.then(projects => {
-					mixer.dataset(projects);
-				})
-				.catch(console.error.bind(console));
-		};
+			const projects = ProjectData.getFilteredProjects(category);
+			mixer.dataset(projects);
+		}
 		
 		controls.addEventListener('click', function(e) {
 			filterItems(e.target);
@@ -111,7 +109,9 @@ module.exports = {
 			} else if (button.matches('[data-ref="layout"]')) {
 				activateButton(button, layouts);
 				activeLayout = button.getAttribute('data-layout');
-				mixer.changeLayout(activeLayout);
+				mixer.changeLayout('changeLayout', {
+					containerClassName: activeLayout
+				});
 			}
 			
 			// Get projects that match active category
