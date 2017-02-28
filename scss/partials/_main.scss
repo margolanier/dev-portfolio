@@ -18,8 +18,15 @@ p {
 }
 
 #header {
-	display: flex;
 	padding: 1em;
+	
+	@include breakpoint($medium) {
+		display: flex;
+		
+		nav {
+			margin-left: auto;
+		}
+	}
 	
 	h1 {
 		margin-bottom: 0;
@@ -32,10 +39,6 @@ p {
 		text-transform: lowercase;
 		letter-spacing: 1px;
 	}
-}
-
-nav {
-	margin-left: auto;
 }
 
 button {
@@ -55,8 +58,6 @@ button {
 }
 
 .item-btns {
-	text-align: center;
-	
 	a {
 		@include header-font;
 		color: $font-color;
@@ -73,14 +74,16 @@ button {
 
 #portfolio {
 	.item {
-		@include grid-column(12);
 		border-top: none;
 		position: relative;
-		overflow: hidden;
 		margin: 0;
 		padding: 0;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
+		
+		.item-image > img {
+			width: 100%;
+		}
 		
 		.item-info {
 			h2 {
@@ -98,6 +101,8 @@ button {
 	
 	&.grid {
 		.item {
+			overflow: hidden;
+			@include grid-column(12);
 			&:last-child:not(:first-child) {
 				float: none;
 			}
@@ -142,6 +147,10 @@ button {
 				transition: 0.1s ease-in;
 			}
 			
+			.item-btns {
+				text-align: center;
+			}
+			
 			&:hover {
 				.item-image {
 					opacity: 0.8;
@@ -156,5 +165,27 @@ button {
 	
 	&.list {
 		margin: 0 1em;
+		
+		.item {
+			width: 100%;
+			background-color: $bg-color;
+			margin-bottom: 2em;
+			
+			.item-image {
+				@include grid-column(12);
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+				@include breakpoint($medium) {
+					@include grid-column(4);
+					padding-left: 0 !important;
+				}
+			}
+			.item-info {
+				@include grid-column(12);
+				@include breakpoint($medium) {
+					@include grid-column(8);
+				}
+			}
+		}
 	}
 }
