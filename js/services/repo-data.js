@@ -17,7 +17,10 @@ module.exports = {
 			this.name = highlight.title;
 			this.repoName = repo.name;
 			this.image = highlight.image;
-			this.desc = repo.description;
+			this.full_desc = repo.description;
+			// Get first sentence of repo description
+			let short_desc = repo.description.substr(0, repo.description.indexOf('.')) + '.';
+			this.desc = short_desc;
 			this.category = highlight.category;
 			this.siteLink = repo.homepage;
 			this.githubLink = repo.html_url;

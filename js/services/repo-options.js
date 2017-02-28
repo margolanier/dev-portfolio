@@ -26,7 +26,7 @@ module.exports = [
 	{
 		title: 'Lemonade Stand',
 		name: 'lemonade-stand',
-		image: 'assets/lemonade-stand.png',
+		image: 'assets/lemonade-preview.png',
 		category: ['game', 'angular'],
 	},
 	{

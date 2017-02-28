@@ -5,28 +5,34 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css?family=Domine|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 
 <body ng-app="PortfolioApp">
-	<header>
-		<h1>Portfolio</h1>
+	<section id="header">
+		<header>
+			<h1>Margo Lanier</h1>
+			<p>Front-end developer</p>
+		</header>
+
 		<nav data-ref="controls">
-            <button class="control control-filter" data-ref="filter" data-category="all">All</button>
+			<button class="control control-filter" data-ref="filter" data-category="all">All</button>
 			<button class="control control-filter" data-ref="filter" data-category="angular">AngularJS</button>
 			<button class="control control-filter" data-ref="filter" data-category="game">Games</button>
-            <button class="control control-filter" data-ref="filter" data-category="tool">Tools</button>
+			<button class="control control-filter" data-ref="filter" data-category="tool">Tools</button>
 
-            <button class="control control-layout" data-ref="layout" data-layout="grid">Grid</button>
-            <button class="control control-layout" data-ref="layout" data-layout="list">List</button>
-			
+			<button class="control control-layout" data-ref="layout" data-layout="grid">Grid</button>
+			<button class="control control-layout" data-ref="layout" data-layout="list">List</button>
 		</nav>
-	</header>
-	
-	<section ng-controller="ListProjects">
-		<div id="portfolio" data-ref="container"></div>
 	</section>
+	
+	<main>
+		<section ng-controller="ListProjects">
+			<div id="portfolio" data-ref="container"></div>
+		</section>
+	</main>
 </body>
 
 </html>

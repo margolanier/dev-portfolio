@@ -24,6 +24,10 @@ module.exports = {
 				<div class="item-info">
 					<h2>${item.name}</h2>
 					<p>${item.desc}</p>
+					<div class="item-btns">
+						<a href="${item.siteLink}" target="blank">View site</a>
+						<a href="${item.githubLink}" target="blank">View code</a>
+					</div>
 				</div>
 			</div>`;
 		};

@@ -17,8 +17,25 @@ p {
     box-sizing: border-box;
 }
 
-header {
+#header {
+	display: flex;
 	padding: 1em;
+	
+	h1 {
+		margin-bottom: 0;
+		border-bottom: 2px solid $primary-color;
+	}
+	
+	p {
+		margin-top: 5px;
+		font-weight: bold;
+		text-transform: lowercase;
+		letter-spacing: 1px;
+	}
+}
+
+nav {
+	margin-left: auto;
 }
 
 button {
@@ -37,23 +54,43 @@ button {
     }
 }
 
+.item-btns {
+	text-align: center;
+	
+	a {
+		@include header-font;
+		color: $font-color;
+		padding: 5px 10px;
+		border: 1px solid $font-color;
+		text-decoration: none;
+		background-color: $bg-color;
+
+		&:hover, &:focus {
+			background-color: white;
+		}
+	}
+}
+
 #portfolio {
 	.item {
 		@include grid-column(12);
-
 		border-top: none;
 		position: relative;
 		overflow: hidden;
-		height: 200px;
 		margin: 0;
 		padding: 0;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
-
+		
 		.item-info {
+			h2 {
+				font-size: 1.3em;
+				margin: 0.3em 0;
+			}
 			p {
 				font-size: 1em;
 				line-height: 1.3em;
+				margin: 0 0 1em 0;
 			}
 		}
 		
@@ -61,14 +98,26 @@ button {
 	
 	&.grid {
 		.item {
+			&:last-child:not(:first-child) {
+				float: none;
+			}
 			@include breakpoint($small) {
 				@include grid-column(6);
+				&:last-child:not(:first-child) {
+					float: none;
+				}
 			}
 			@include breakpoint($medium) {
 				@include grid-column(4);
+				&:last-child:not(:first-child) {
+					float: none;
+				}
 			}
 			@include breakpoint($large) {
 				@include grid-column(3);
+				&:last-child:not(:first-child) {
+					float: none;
+				}
 			}
 			
 			.item-image {
