@@ -25,6 +25,7 @@ p {
 		
 		nav {
 			margin-left: auto;
+			margin-top: 4.5em;
 		}
 	}
 	
@@ -51,10 +52,20 @@ button {
 	&.control-active {
 		border-bottom: 3px solid $primary-color;
 	}
-
+	
     &:hover, &:focus {
         opacity: 0.8;
+		outline: none;
     }
+	
+	&.control-layout {
+		display: none;
+		color: $font-color;
+		
+		&.control-active {
+			border-bottom: 3px solid $font-color;
+		}
+	}
 }
 
 .item-btns {

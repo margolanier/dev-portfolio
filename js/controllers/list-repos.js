@@ -7,6 +7,8 @@ module.exports = {
 			return ProjectData.parseGithub('margolanier');
 		};
 		
+		// Keep track of which projects are displayed (all or filtered set)
+		let currentItems;
 		
 		/*
 		 * Initiate empty portfolio container and dataset
@@ -81,12 +83,8 @@ module.exports = {
 		
 		// Filter portfolio by category and pass new dataset to mixer
 		const getFiltered = category => {
-			return ProjectData.getFilteredProjects(category);
-		};
-		
-		const renderFiltered = category => {
-			const projects = ProjectData.getFilteredProjects(category);
-			mixer.dataset(projects);
+			currentItems = ProjectData.getFilteredProjects(category);
+			mixer.dataset(currentItems);
 		}
 		
 		controls.addEventListener('click', function(e) {
@@ -109,20 +107,17 @@ module.exports = {
 			} else if (button.matches('[data-ref="layout"]')) {
 				activateButton(button, layouts);
 				activeLayout = button.getAttribute('data-layout');
-				mixer.changeLayout('changeLayout', {
-					containerClassName: activeLayout
-				});
+				mixer.changeLayout(activeLayout);
 			}
 			
 			// Get projects that match active category
-			renderFiltered(activeCategory);
+			getFiltered(activeCategory);
 			
 			// Event listener for all buttons => calls 'filterItems' recursively with new target
             controls.addEventListener('click', function(e) {
                 filterItems(e.target);
             });
             
-			//mixer.dataset(items);
         };
 		
 	},
