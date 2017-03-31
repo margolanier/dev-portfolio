@@ -9,21 +9,21 @@ gulp.task('default', ['html', 'css', 'js']);
 
 gulp.task('html', () => {
     gulp.src('templates/*.html')
-        .pipe(gulp.dest(`public/templates`));
+        .pipe(gulp.dest(`docs/templates`));
 
     gulp.src('assets/*')
-        .pipe(gulp.dest(`public/assets`));
+        .pipe(gulp.dest(`docs/assets`));
 
     return gulp.src('*.html')
         .pipe(strip.text())
-        .pipe(gulp.dest(`public`));
+        .pipe(gulp.dest(`docs`));
 });
 
 gulp.task('css', () => {
 	return gulp.src('scss/style.scss')
         .pipe(sass())
         .pipe(strip.text())
-        .pipe(gulp.dest(`public`));
+        .pipe(gulp.dest(`docs`));
 });
 
 gulp.task('js', () => {
@@ -33,7 +33,7 @@ gulp.task('js', () => {
             presets: ['es2015']
         }))
         .pipe(strip.text())
-        .pipe(gulp.dest(`public`));
+        .pipe(gulp.dest(`docs`));
 });
 
 gulp.task('watch', ['default'], () => {
